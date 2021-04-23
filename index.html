@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Quote Generator</title>
+  <style>
+    p#demo {
+        width: 70%;
+        margin: 40px auto;
+        background: mediumpurple;
+        color: #fff;
+        padding: 120px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 35px;
+        border-radius: 6px;
+    }
+    html, body {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    span#authorName {
+        text-align: right;
+        text-transform: uppercase;
+        color: peachpuff;
+        position: absolute;
+        bottom: 33%;
+        right: 16%;
+        font-size: 34px;
+    }
+    button#generate {
+      cursor: pointer;
+      background: navy;
+      color: #fff;
+      padding: 15px 37px;
+      border-radius: 30px;
+      font-size: 23px;
+  }
+  </style>
+</head>
+<body>
+     <p id="demo">
+       - Envy of other people shows how they are unhappy. Their continual attention to others behavior shows how they are boring.
+       
+     </p>
+     <span id="authorName"> Seneca</span>
+     <button id="generate">Generate</button>
+
+     <script>
+         "use strict";
+
+         
+          let quotes = [
+            {
+              quote: '- Envy of other people shows how they are unhappy. Their continual attention to others behavior shows how they are boring.',
+              author: 'Seneca'
+            },
+            {
+              quote: 'Don’t compare yourself with anyone in this world…if you do so, you are insulting yourself.',
+              author: 'Bill Gates'
+            },
+            {
+              quote: 'Do not judge me by my successes, judge me by how many times I fell down and got back up again',
+              author: 'Nelson Mandela'
+            },
+            {
+              quote: "Your time is limited, so don't waste it living someone else's life. Don't be trapped by dogma – which is living with the results of other people's thinking.",
+              author: 'Steve Jobs'
+            },
+            
+          ];
+          let demo= document.getElementById('demo');
+          let generate= document.getElementById('generate');
+          let authorName= document.getElementById('authorName');
+
+          generate.addEventListener('click', ()=>{
+            let randomText = Math.floor(Math.random()*quotes.length);
+            demo.innerHTML = "- "+quotes[randomText].quote;
+            authorName.innerHTML = quotes[randomText].author;
+          })
+          
+          
+          
+          
+          
+
+     </script>
+</body>
+</html>
